@@ -267,13 +267,13 @@ local function CreateSlider(frame,options)
 	set(default)
 	local sliding = false
 	button.InputBegan:Connect(function(input)
-		if input.UserInputType == Enum.UserInputType.MouseButton1 then
+		if input.UserInputType == Enum.UserInputType.MouseButton1 or input.UserInputType == Enum.UserInputType.Touch then
 			sliding = true
 			slide(input)
 		end
 	end)
 	button.InputEnded:Connect(function(input)
-		if input.UserInputType == Enum.UserInputType.MouseButton1 then
+		if input.UserInputType == Enum.UserInputType.MouseButton1 or input.UserInputType == Enum.UserInputType.Touch then
 			sliding = false
 			slide(input)
 		end
@@ -3070,4 +3070,3 @@ function ui:Init(options)
 		return window
 	end
 end
-return ui
