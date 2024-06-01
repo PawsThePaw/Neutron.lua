@@ -279,7 +279,7 @@ local function CreateSlider(frame,options)
 		end
 	end)
 	uis.InputChanged:Connect(function(input)
-		if input.UserInputType == Enum.UserInputType.MouseMovement and sliding or input.UserInputType == Enum.UserInputType.TouchMoved and sliding then
+		if input.UserInputType == Enum.UserInputType.MouseMovement and sliding or or input.UserInputType == Enum.UserInputType.Touch and sliding then
 			slide(input)
 		end
 	end)
